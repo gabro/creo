@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    ["transform-runtime", {
+      "regenerator": true,
+      "polyfill": false
+    }],
+    "syntax-flow",
+    "transform-flow-strip-types"
+  ],
+  "presets": ["latest"]
+}
