@@ -6,6 +6,8 @@ import nemobot from './nemobot';
 import prisma from './prisma';
 import gitcrypt from './gitcrypt';
 import c from 'colors/safe';
+import imgcat from 'imgcat';
+import path from 'path';
 
 import type { Step, Flow, DoneStep, DoneStepStatus } from './domain';
 
@@ -99,9 +101,15 @@ function clearConsole() {
   process.stdout.write('\x1Bc');
 }
 
+function printCover() {
+  imgcat(path.resolve(__dirname, 'god-and-adam.gif'), { log: true });
+  console.log();
+}
+
 try {
   clearConsole();
   console.log('🖖  Greetings, hooman!\n')
+  printCover();
   main();
 } catch (e) {
   console.log(e);
